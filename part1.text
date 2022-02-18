@@ -1,0 +1,25 @@
+Part 1-
+
+extraLargeArray -
+insert time = 1.1162766s
+append time = 3.7177ms
+
+largeArray -
+insert time = 9.678ms
+append time = 527.9μs
+
+mediumArray -
+insert time = 185.4μs
+append time = 142.1μs
+
+smallArray -
+insert time = 49.2μs
+append time = 108.7μs
+
+tinyArray -
+insert time = 37.6μs
+append time = 99.1μs
+
+While the insert function starts out quicker than the append function when the array has few values, the append function increases its runtime linearly while the insert function sees an exponential increase based on the data we are providing it.
+
+The reason for unshift taking so much longer than the push method, is because any time you unshift (add a value to the front of the new array), the function has to move every previous value ahead 1 index, to make room for the new value, which takes up processing time. This is unlike our push method, where our function doesn't have to take up computing power on moving the values around. It instead simply adds the new value to the end of our existing container, and everything else stays in place.
